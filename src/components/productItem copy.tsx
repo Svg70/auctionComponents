@@ -17,22 +17,17 @@ interface Src {
 
 const Wrapper = styled.div`
   display: flex;
-  height: 150px;
+  height: 120px;
   width: 100%;
   border-top: 1px solid #b6b5b5
 `
-const SImageWrap = styled.div`
-  width: 35%;
-  margin: 2px;
-  border: 1px #999 solid;
+const SImage = styled.div`
+  height: 100%;
+  width: 200px;
+  margin-top: 10px;
+  background: url(${(props: Src) => props.imgSrc});
+  background-size: cover;
 `
-const SImage = styled.img`
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-`
-
 const SDetails = styled.div`
   display: flex;
   flex-direction: column;
@@ -69,9 +64,7 @@ const SItemLocation = styled.p`
 export const ProductItem = ({name = 'test lot', price = 100, location = 'Краснодарский край, Краснодар', ...props}: Props) => {
     return (
       <Wrapper>
-          <SImageWrap>
-            <SImage src = {props.src}/>
-          </SImageWrap>
+          <SImage imgSrc = {props.src}/>
           <SDetails>
             <SItemName href='./jjj'>{name}</SItemName>
             <SItemLocation>{location}</SItemLocation>

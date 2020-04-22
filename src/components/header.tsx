@@ -13,9 +13,11 @@ interface HeaderStatus {
 }
 
 const SHeader = styled.div`
+  position: fixed;
   display: flex;
   justify-content: space-around;
   height: 62px;
+  width: 100%;
   background-color: #999;
 `
 const SMenu = styled.div`
